@@ -10,6 +10,7 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
+    	$this->view->headTitle('Pacifika Consultants');
         // action body
     }
 
