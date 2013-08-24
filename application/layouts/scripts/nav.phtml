@@ -1,0 +1,26 @@
+<?php 
+	$sections = array('Home' => '/',
+		'Projects' => '/projects',
+		'Testamonials' => '/testamonials',
+		'About' => '/about',
+		'Contact'=> '/contact');
+?>
+<!-- Large Nav -->
+<div class="fixed">
+	<nav class="top-bar">
+		<ul class="title-area">
+			
+		</ul>
+		<section class="top-bar-section">			
+			<ul class="left">
+				<li class="toggle-topbar"><a>Menu</a></li>
+				<?foreach ($sections as $section => $url)
+				{
+					$active = $this->request->getRequestUri() == $url ? 'active' : '';
+					echo('<li class="'.$active.'"><a href="'.$url.'">'.$section.'</a></li>');
+				}
+				?>			
+			</ul>
+		</section> 
+	</nav>
+</div>
