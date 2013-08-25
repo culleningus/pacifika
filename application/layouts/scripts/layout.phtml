@@ -8,7 +8,7 @@
 	  <?php echo $this->headLink()->appendStylesheet('/css/screen.css') ?>
 	  <?php echo $this->headLink()->appendStylesheet('/css/foundation/normalize.css') ?>
 	  <?php echo $this->headLink()->appendStylesheet('/css/foundation/foundation.min.css') ?>
-	  <?php echo $this->headScript()->appendFile('/node_modules/jquery/lib/node-jquery.js')?>
+	  <?php echo $this->headScript()->appendFile('/js/vendor/jquery.js')?>
 	  <link rel="icon" 
 	      type="image/png" 
 	      href="/images/structure/icon.png">
@@ -22,8 +22,9 @@
 		</div>
 		<script src="js/foundation.min.js"></script>
 		<script src="js/foundation/foundation.topbar.js"></script>
+		<script src="js/vendor/custom.modernizr.js"></script>
 		<script>
-			$(document).foundation();
+			$(document).foundation().foundation('topbar');
 		</script>
 	</body> 
 </html>

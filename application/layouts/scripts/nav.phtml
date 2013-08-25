@@ -9,11 +9,13 @@
 <div class="fixed">
 	<nav class="top-bar">
 		<ul class="title-area">
-			
+			<li class="name"></li>			
+			<li class="toggle-topbar menu-icon">
+				<a href><span>Menu</span></a>
+			</li>			
 		</ul>
 		<section class="top-bar-section">			
 			<ul class="left">
-				<li class="toggle-topbar"><a>Menu</a></li>
 				<?foreach ($sections as $section => $url)
 				{
 					$active = $this->request->getRequestUri() == $url ? 'active' : '';

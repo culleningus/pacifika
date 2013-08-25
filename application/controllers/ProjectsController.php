@@ -1,6 +1,6 @@
 <?php
 
-class ProjectsController extends Zend_Controller_Action
+class ProjectsController extends SiteController
 {
 
     public function init()
