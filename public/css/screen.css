@@ -4,7 +4,7 @@ html body {
   min-height: 800px;
   background: #F5F5F5; }
   html body .main-content {
-    padding-top: 50px;
+    padding-top: 30px;
     min-height: 500px; }
   html body .row {
     max-width: 80em; }
@@ -13,10 +13,17 @@ html body {
     font-size: 13px; }
   html body h1 {
     font-size: 1.6em;
-    color: #794400; }
+    color: #2c9999; }
   html body nav.top-bar {
     background: #2c9999;
-    padding-left: 25%; }
+    padding-left: 30%; }
+    @media (max-width: 768px) {
+      html body nav.top-bar {
+        padding-left: 0; } }
+    html body nav.top-bar .name {
+      background: #2c9999; }
+    html body nav.top-bar .menu-icon span {
+      color: #ffffff; }
   html body .top-bar-section ul li a:not(.button) {
     font-size: 1em;
     background: #2c9999; }
@@ -40,13 +47,14 @@ body.index .main-content .ceo {
   float: left; }
 
 body.projects #projects .headings {
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
   body.projects #projects .headings h2 {
     margin-bottom: 50px;
     float: left;
     width: 25%; }
     body.projects #projects .headings h2 a {
-      font-size: 1.4em;
+      font-size: 1.3em;
       cursor: pointer;
       color: #2c9999; }
       body.projects #projects .headings h2 a.hover, body.projects #projects .headings h2 a.selected {
@@ -75,3 +83,18 @@ body.projects #projects .project-content {
     text-align: left; }
   body.projects #projects .project-content ul {
     padding-left: 5%; }
+
+body.testamonials h1 {
+  margin-bottom: 30px; }
+body.testamonials i {
+  margin-bottom: 30px;
+  display: block;
+  font-weight: bold; }
+
+body.about h2 {
+  font-size: 1.4em;
+  color: #794400;
+  margin: 20px 0; }
+
+body.contact .card {
+  margin-bottom: 20px; }

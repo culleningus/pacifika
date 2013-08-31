@@ -5,7 +5,7 @@ html body
 {
 	.main-content
 	{
-		padding-top: 50px;
+		padding-top: 30px;
 		min-height: 500px;
 	}
 
@@ -23,7 +23,7 @@ html body
 	h1
 	{
 		font-size: 1.6em;
-		color: $site-brown;
+		color: $nav-blue;
 	}
 
 	font-family: arial;
@@ -33,8 +33,22 @@ html body
 
     nav.top-bar
     {
-    	background: #2c9999;
-    	padding-left: 25%;    	
+    	background: $nav-blue;
+    	padding-left: 30%;    	
+
+    	@media (max-width: 768px) {
+		    padding-left: 0;
+		} 
+
+		.name
+		{
+			background: $nav-blue;
+		}
+
+		.menu-icon span
+		{
+			color: #ffffff;
+		}
     }
 
     .top-bar-section ul li 
@@ -90,14 +104,15 @@ body.projects
 	{
 		.headings
 		{
-			text-align: center;			
+			text-align: center;
+			overflow: hidden;			
 
 			h2
 			{
 				margin-bottom: 50px;
 				a
 				{
-					font-size: 1.4em;
+					font-size: 1.3em;
 					cursor: pointer;
 					color: $nav-blue;
 
@@ -105,6 +120,8 @@ body.projects
 					{
 						color: $site-brown;
 					}	
+
+					
 				}
 			
 				float: left;				
@@ -166,4 +183,37 @@ body.projects
 			}
 		}
 	}	
+}
+
+body.testamonials
+{
+	h1
+	{
+		margin-bottom: 30px;
+	}
+
+	i
+	{
+		margin-bottom: 30px;
+		display: block;
+		font-weight: bold;
+	}
+}
+
+body.about
+{
+	h2
+	{
+		font-size: 1.4em;
+		color: $site-brown;
+		margin: 20px 0;
+	}
+}
+
+body.contact
+{
+	.card
+	{
+		margin-bottom: 20px;
+	}
 }
