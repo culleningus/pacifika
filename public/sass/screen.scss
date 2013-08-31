@@ -1,5 +1,40 @@
+$nav-blue: #2c9999;
+
 body
 {
     font-size: 13px;
+    min-height: 800px;
+
+    nav.top-bar
+    {
+    	background: #2c9999;
+    	padding-left: 25%;
+    	
+    }
+
+    .top-bar-section ul li 
+    {
+    	a:not(.button)
+    	{
+    		font-size: 1em;
+    		background: $nav-blue;
+    	}
+
+    	&.active a
+    	{
+    		background: #ffffff;
+    		color: $nav-blue;
+    	}
+    }
+
+    .content
+    {
+    	background: #ffffff;
+    }
+
+    #card-container
+    {
+    	margin-top:10%;
+    }
 }
   
