@@ -4,6 +4,7 @@ html body {
   min-height: 800px;
   background: #F5F5F5; }
   html body .main-content {
+    padding-top: 50px;
     min-height: 500px; }
   html body .row {
     max-width: 80em; }
@@ -24,8 +25,6 @@ html body {
     color: #2c9999; }
   html body .main-content {
     background: #ffffff; }
-  html body #card-container {
-    margin-top: 10%; }
 
 body.index .main-content .image-container {
   text-align: center;
@@ -41,9 +40,9 @@ body.index .main-content .ceo {
   float: left; }
 
 body.projects #projects .headings {
-  padding: 5% 0;
   text-align: center; }
   body.projects #projects .headings h2 {
+    margin-bottom: 50px;
     float: left;
     width: 25%; }
     body.projects #projects .headings h2 a {
@@ -56,7 +55,7 @@ body.projects #projects .headings {
       color: #794400; }
 body.projects #projects .select-project {
   text-align: center;
-  margin: 120px 0 20% 5%; }
+  margin: 0 0 20% 5%; }
   body.projects #projects .select-project p {
     opacity: 0.4;
     font-size: 2em; }
