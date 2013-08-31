@@ -1,64 +1,88 @@
 <?php
-	$projects = array('Indonesia',
-		'Papua New Guinea',
+	$projects = array('Solomon Islands',
 		'New Zealand',
-		'Solomon Islands');
+		'Indonesia',
+		'Papua New Guinea');
 ?>
 <div id="projects">
 	<?php 
 
 		$headings = '<div class="headings">';
-		$content = '<div class="project-container">
-						<div class="select-project">Select a Country to View Projects</div>';	
+		$content = '<div class="project-container">';
+		$select = '<div class="select-project"><p>Select a Country to View Projects</p>';
+		$images = '<div class="images">';	
 	
 		foreach($projects as $project){
 
 			$id = str_replace(' ', '', strtolower($project));
-			$headings .= '<h2 id="'.$id.'"><a>'.$project.'</a></h2>';
+			$headings .= '<h2 data-target="'.$id.'"><a>'.$project.'</a></h2>';
+			$image = '<img data-target = "'.$id.'" src="images/countries/'.$id.'.jpg?3" alt="'.$project.'">';
 
-			$description = $this->render('projects/partials/'.$id.'/1.phtml');
+			$description = $this->render('projects/partials/'.$id.'/data.phtml');
 		
-			$content .= '<div id="'.$id.'-content" class="project-content"><img src="images/countries/'.$id.'.jpg" alt="'.$project.'">';
+			$content .= '<div id="'.$id.'-content" class="project-content">'.$image;
 			$content .= '<div class="description">'.$description.'</div></div>';
+			$images .= $image;
 		}
 
 		$headings .= '</div>';
-		$content .= '</div>';
+		$images .= '</div>';
+		$content .= '</div>';		
+		$select .= $images.'</div>';
 
-		echo($headings.$content);
+		echo($headings.$select.$content);
 	?>
 </div>
 
 <script type="text/javascript">
 
-	$('.headings h2').hover(function(){
-		$(this).find('a').addClass('hover', 1000);
-	}, function()
-	{
-		$(this).find('a').removeClass('hover', 1000);
-	});
-
-	$('.headings h2').click(function(){
-
-		$('.select-project').remove();
-
-		$('.headings h2').removeClass('selected');
-
-		var id = $(this).attr('id') + '-content';		
-		$('.project-content').hide();
-		$('#' + id).show();
-
-		$(this).addClass('selected');
-	});
-	function loadProject(project, page)
-	{
-		$.ajax({
-			url: '/projects/project/' + project + '/' + page,
-			dataType: 'html'})
-		.done(function(html){
-			$('#projects').html(html);
+	$(document).ready(function(){
+		$('.headings h2').hover(function(){
+			var target = $(this).attr('data-target');
+			$(this).find('a').addClass('hover', 1000);
+			$('.images img[data-target="'+target+'"]').css('opacity',1).css('filter', ':alpha(opacity=100)');
+		}, function()
+		{
+			var target = $(this).attr('data-target');
+			$('.images img[data-target="'+target+'"]').css('opacity',0.4).css('filter', ':alpha(opacity=40)');
+			$(this).find('a').removeClass('hover', 1000);
 		});
-	}
 
-	//loadProject('', '');
+		$('.images img').hover(function(){
+			var target = $(this).attr('data-target');
+			$(this).css('opacity',1).css('filter', ':alpha(opacity=100)');			
+			$('.headings h2[data-target="'+target+'"] a').addClass('hover');
+		}, function()
+		{
+			var target = $(this).attr('data-target');
+			$(this).css('opacity',0.4).css('filter', ':alpha(opacity=40)');			
+			$('.headings h2[data-target="'+target+'"] a').removeClass('hover');
+		});
+
+		$('.headings h2').click(function(){
+
+			var target = $(this).attr('data-target');		
+			openContent(target);
+		});
+
+		$('.images img').click(function(){
+
+			var target = $(this).attr('data-target');		
+			openContent(target);
+		});
+
+		function openContent(target)
+		{
+			headingId = target  + '-content';
+
+			$('.select-project').remove();
+
+			$('.headings h2').removeClass('selected');
+
+			$('.project-content').hide();
+			$('#' + headingId).show();
+
+			$('.headings h2[data-target="'+target+'"]').addClass('selected');
+		}
+	});	
 </script>
