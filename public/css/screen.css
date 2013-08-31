@@ -1,16 +1,66 @@
-body {
+html body {
+  font-family: arial;
   font-size: 13px;
-  min-height: 800px; }
-  body nav.top-bar {
+  min-height: 800px;
+  background: #F5F5F5; }
+  html body .row {
+    max-width: 80em; }
+  html body p, html body h1, html body h2, html body div {
+    font-family: arial;
+    font-size: 13px; }
+  html body h1 {
+    font-size: 1.6em;
+    color: #794400; }
+  html body nav.top-bar {
     background: #2c9999;
     padding-left: 25%; }
-  body .top-bar-section ul li a:not(.button) {
+  html body .top-bar-section ul li a:not(.button) {
     font-size: 1em;
     background: #2c9999; }
-  body .top-bar-section ul li.active a {
+  html body .top-bar-section ul li.active a {
     background: #ffffff;
     color: #2c9999; }
-  body .content {
+  html body .content {
     background: #ffffff; }
-  body #card-container {
+  html body #card-container {
     margin-top: 10%; }
+
+body.index .content .image-container {
+  text-align: center;
+  margin: 30px 0; }
+body.index .content .description {
+  width: 70%;
+  float: left;
+  padding-right: 2%; }
+  body.index .content .description h1 {
+    padding-right: 2%; }
+body.index .content .ceo {
+  width: 30%;
+  float: left; }
+
+body.projects #projects .headings {
+  padding: 5% 0;
+  text-align: center; }
+  body.projects #projects .headings h2 {
+    cursor: pointer;
+    float: left;
+    width: 25%; }
+    body.projects #projects .headings h2 a {
+      font-size: 1.4em;
+      color: #2c9999; }
+      body.projects #projects .headings h2 a.hover, body.projects #projects .headings h2 a.selected {
+        color: #794400; }
+    body.projects #projects .headings h2.selected a {
+      color: #794400; }
+body.projects #projects .select-project {
+  text-align: center;
+  margin: 20% 0;
+  font-size: 2em;
+  opacity: 0.3; }
+body.projects #projects img {
+  width: 33%; }
+body.projects #projects .project-content {
+  display: none;
+  text-align: center; }
+  body.projects #projects .project-content .description {
+    text-align: left; }

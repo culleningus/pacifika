@@ -1,1 +1,64 @@
-<?php echo $this->render('projects/partials/solomon-islands/2.phtml');?>
+<?php
+	$projects = array('Indonesia',
+		'Papua New Guinea',
+		'New Zealand',
+		'Solomon Islands');
+?>
+<div id="projects">
+	<?php 
+
+		$headings = '<div class="headings">';
+		$content = '<div class="project-container">
+						<div class="select-project">Select a Country to View Projects</div>';	
+	
+		foreach($projects as $project){
+
+			$id = str_replace(' ', '', strtolower($project));
+			$headings .= '<h2 id="'.$id.'"><a>'.$project.'</a></h2>';
+
+			$description = $this->render('projects/partials/'.$id.'/1.phtml');
+		
+			$content .= '<div id="'.$id.'-content" class="project-content"><img src="images/countries/'.$id.'.jpg" alt="'.$project.'">';
+			$content .= '<div class="description">'.$description.'</div></div>';
+		}
+
+		$headings .= '</div>';
+		$content .= '</div>';
+
+		echo($headings.$content);
+	?>
+</div>
+
+<script type="text/javascript">
+
+	$('.headings h2').hover(function(){
+		$(this).find('a').addClass('hover', 1000);
+	}, function()
+	{
+		$(this).find('a').removeClass('hover', 1000);
+	});
+
+	$('.headings h2').click(function(){
+
+		$('.select-project').remove();
+
+		$('.headings h2').removeClass('selected');
+
+		var id = $(this).attr('id') + '-content';		
+		$('.project-content').hide();
+		$('#' + id).show();
+
+		$(this).addClass('selected');
+	});
+	function loadProject(project, page)
+	{
+		$.ajax({
+			url: '/projects/project/' + project + '/' + page,
+			dataType: 'html'})
+		.done(function(html){
+			$('#projects').html(html);
+		});
+	}
+
+	//loadProject('', '');
+</script>

@@ -15,5 +15,14 @@ class ProjectsController extends SiteController
 
     }
 
+    public function projectAction()
+    {
+    	$this->_helper->layout()->disableLayout(); 
+    	$this->_helper->viewRenderer->setNoRender(true);
+
+    	$project = json_encode($this->render('partials/solomon-islands/1'));
+    	
+    	echo $project;
+    }
 }
 

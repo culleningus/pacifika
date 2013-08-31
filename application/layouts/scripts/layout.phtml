@@ -13,14 +13,14 @@
 	      type="image/png" 
 	      href="/images/structure/icon.png">
 	</head>
-	<body>
+	<body class="<?=$this->section?>">
 		<div class="row">
 			<div class="columns">
 				<?php echo $this->render('nav.phtml');?>
 			</div>
 		</div>
 		<div class="row">
-			<div class="columns content large-10 large-offset-1">			  	
+			<div class="columns content large-10 large-offset-1">	  	
 			 	<?php echo $this->layout()->content ?> 
 			</div>
 		</div>
