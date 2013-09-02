@@ -1,6 +1,6 @@
 <?php
 
-class TestamonialsController extends SiteController
+class TestimonialsController extends SiteController
 {
 
     public function init()
