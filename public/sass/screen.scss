@@ -3,6 +3,8 @@ $site-brown: #794400;
 
 html body
 {
+	font-size: 13px;
+
 	.main-content
 	{
 		padding-top: 30px;
@@ -17,13 +19,17 @@ html body
 	p, h1, h2, div
 	{
 		font-family: arial;
-		font-size: 13px;
 	}
 
 	h1
 	{
 		font-size: 1.8em;
-		color: $site-brown;
+		color: $nav-blue;
+	}
+
+	h2
+	{
+		font-size: 1em;
 	}
 
 	font-family: arial;
@@ -74,10 +80,20 @@ html body
 
 body.index .main-content
 {
-	.image-container
+	h1
 	{
+		color: $site-brown;
+	}
+
+	.image-container
+	{		
 		text-align: center;
-		margin: 30px 0;
+		margin: 0 0 30px;
+
+		img
+		{
+			width: 65%;
+		}
 	}
 
 	.description
@@ -185,18 +201,22 @@ body.projects
 	}	
 }
 
-body.testamonials
+body.testimonials
 {
 	h1
 	{
 		margin-bottom: 30px;
+		font-size: 2em;
+		color: $nav-blue;
 	}
 
-	i
-	{
-		margin-bottom: 30px;
+	.referer
+	{ 
+		margin: 30px 0 15px;
 		display: block;
 		font-weight: bold;
+		color: $site-brown;
+		font-size: 1.2em;
 	}
 }
 

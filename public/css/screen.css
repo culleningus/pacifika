@@ -1,4 +1,5 @@
 html body {
+  font-size: 13px;
   font-family: arial;
   font-size: 13px;
   min-height: 800px;
@@ -9,11 +10,12 @@ html body {
   html body .row {
     max-width: 80em; }
   html body p, html body h1, html body h2, html body div {
-    font-family: arial;
-    font-size: 13px; }
+    font-family: arial; }
   html body h1 {
     font-size: 1.8em;
-    color: #794400; }
+    color: #2c9999; }
+  html body h2 {
+    font-size: 1em; }
   html body nav.top-bar {
     background: #2c9999;
     padding-left: 30%; }
@@ -33,9 +35,13 @@ html body {
   html body .main-content {
     background: #ffffff; }
 
+body.index .main-content h1 {
+  color: #794400; }
 body.index .main-content .image-container {
   text-align: center;
-  margin: 30px 0; }
+  margin: 0 0 30px; }
+  body.index .main-content .image-container img {
+    width: 65%; }
 body.index .main-content .description {
   width: 70%;
   float: left;
@@ -84,12 +90,16 @@ body.projects #projects .project-content {
   body.projects #projects .project-content ul {
     padding-left: 5%; }
 
-body.testamonials h1 {
-  margin-bottom: 30px; }
-body.testamonials i {
+body.testimonials h1 {
   margin-bottom: 30px;
+  font-size: 2em;
+  color: #2c9999; }
+body.testimonials .referer {
+  margin: 30px 0 15px;
   display: block;
-  font-weight: bold; }
+  font-weight: bold;
+  color: #794400;
+  font-size: 1.2em; }
 
 body.about h2 {
   font-size: 1.4em;
